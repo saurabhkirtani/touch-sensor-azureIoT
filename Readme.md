@@ -54,9 +54,9 @@ To get this to work, follow the steps below:
 
 9.  Go back to your laptop and clone this repository.
     
-    `git clone -my repository url- `
+    `git clone https://github.com/saurabhkirtani/touch-sensor-azureIoT.git`
 
-    `cd -my repository- `
+    `cd touch-sensor-azureIoT `
     
 
 10.  Open your Azure account by going to https://portal.azure.com - if you are attending IoT Next 2016 conference, you will be distributed a free Azure pass. (If you don't have an Azure account, you can get a free trial here: https://azure.microsoft.com/en-in/free/)
