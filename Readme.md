@@ -63,7 +63,7 @@ To get this to work, follow the steps below:
 
 11.  Setup IoT Hub in your Azure account. [Instructions here.](https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md) - Choose Southeast Asia as the region.
 
-12.  Install the Device Explorer utility (if on a Windows dev machine) if you don't have it already. Then, create a new device and note down the **device connection string**. [Instructions here.](https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md). If you are on a non-Windows dev machine, use the iothub-explorer CLI tool - [instructions are here.](https://github.com/Azure/azure-iot-sdks/tree/master/tools/iothub-explorer)
+12.  Install the Device Explorer utility (if on a Windows dev machine) if you don't have it already. Then, create a new device and note down the **device connection string**. [Instructions here.](https://github.com/Azure/azure-iot-sdks/releases). If you are on a non-Windows dev machine, use the iothub-explorer CLI tool - [instructions are here.](https://github.com/Azure/azure-iot-sdks/tree/master/tools/iothub-explorer)
 
 13.  Paste the **device connection string** obained from the above step in connectionString variable in the file pi-gpio-to-cloud.js (which you would have obtained in your laptop after cloning the repository)
 
