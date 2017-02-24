@@ -59,7 +59,7 @@ To get this to work, follow the steps below:
     `cd touch-sensor-azureIoT `
     
 
-10.  Open your Azure account by going to https://portal.azure.com - if you are attending IoT Next 2016 conference, you will be distributed a free Azure pass. (If you don't have an Azure account, you can get a free trial here: https://azure.microsoft.com/en-in/free/)
+10.  Open your Azure account by going to https://portal.azure.com. If you've been ditributed a Azure pass, you can redeem it by following the instructions here: https://www.microsoftazurepass.com/howto. (If you don't have an Azure account, you can get a free trial here: https://azure.microsoft.com/en-in/free/)
 
 11.  Setup IoT Hub in your Azure account. [Instructions here.](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted#create-an-iot-hub) - Choose Southeast Asia as the region.
 
