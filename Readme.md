@@ -1,14 +1,22 @@
 ### Overview
 This repository contains a solution to take readings from a touch sensor and send them to cloud (Microsoft Azure) for real-time analytics, using Node.JS on a Raspberry Pi running Raspbian OS.
 
+### Prerequisites
+1.  Raspberry Pi
+2.  Touch sensor and buzzer
+3.  Azure subscription
+4.  Power BI online account (you can create a free trial at https://www.powerbi.com)
+
 ### Steps
 To get this to work, follow the steps below:
 
-1.  Without giving power to the Raspberry Pi yet, make sure you have connected the touch sensor to the Raspberry Pi as per below. Pin mapping of Raspberry Pi  is [available here.](https://developer.microsoft.com/en-us/windows/iot/docs/pinmappingsrpi).
+1.  Without giving power to the Raspberry Pi yet, make sure you have connected the touch sensor to the Raspberry Pi as per below. Pin mapping of Raspberry Pi is [available here.](https://developer.microsoft.com/en-us/windows/iot/docs/pinmappingsrpi)
 
     -   GND of touch sensor to GND (Pin 6) of Raspberry Pi
     -   VCC of touch sensor to 5V PWR (Pin 2) of Raspberry Pi
     -   SIG of touch sensor to GPIO 2 (Pin 3) of Raspberry Pi
+
+*Note: GND, VCC and SIG are specified near the touch sensor pins.
 
     Follow this setup for connections with the Buzzer:
 
