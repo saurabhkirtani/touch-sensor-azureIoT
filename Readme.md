@@ -1,5 +1,5 @@
 ### Overview
-This repository contains a solution to take readings from a touch sensor and send them to cloud (Microsoft Azure) for real-time analytics, using Node.JS on a Raspberry Pi running Raspbian OS.
+This repository contains a solution to take readings from a touch sensor and send them to cloud (Microsoft Azure) for real-time analytics, using Node.JS on a Raspberry Pi running Raspbian OS. 
 
 ### Prerequisites
 1.  Raspberry Pi
@@ -18,7 +18,7 @@ To get this to work, follow the steps below:
 
 **Note**: GND, VCC and SIG are specified near the touch sensor pins.
 
-    Follow this setup for connections with the Buzzer:
+  Follow this setup for connections with the Buzzer:
 
     -   RED of Buzzer to GPIO 4 (Pin 7) of Raspberry Pi
     -   BLACK of Buzzer to GND (Pin 9) of Raspberry Pi
@@ -57,7 +57,7 @@ To get this to work, follow the steps below:
 
      `cd .. `
 
-     `mkdir iotnext`
+     `mkdir iotplay`
 
 
 9.  Go back to your laptop and clone this repository.
@@ -71,15 +71,15 @@ To get this to work, follow the steps below:
 
 11.  Setup IoT Hub in your Azure account. [Instructions here.](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted#create-an-iot-hub) - Choose Southeast Asia as the region.
 
-12.  Install the Device Explorer utility (if on a Windows dev machine) if you don't have it already. Then, create a new device and note down the **device connection string**. [Instructions here.](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer). If you are on a non-Windows dev machine, use the iothub-explorer CLI tool - [instructions are here.](https://github.com/Azure/iothub-explorer)
+12.  Install the Device Explorer utility (if on a Windows dev machine) if you don't have it already. Then, create a new device and note down the **device connection string**. [Instructions here](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer). If you are on a non-Windows dev machine, use the iothub-explorer CLI tool - [instructions are here.](https://github.com/Azure/iothub-explorer)
 
 13.  Paste the **device connection string** obained from the above step in connectionString variable in the file pi-gpio-to-cloud.js (which you would have obtained in your laptop after cloning the repository)
 
 14.  Go to Filezilla and upload the 2 files - package.json and pi-gpio-to-cloud.js to the Raspberry Pi's iotnext directory.
 
-15.  Now go back to Putty, ensure you are in the iotnext directory.  Run *npm install* to install all the required dependencies automatically. This process can take about a minute or so to complete.
+15.  Now go back to Putty, ensure you are in the iotplay directory.  Run *npm install* to install all the required dependencies automatically. This process can take about a minute or so to complete.
 
-16.  Run the pi-gpio-to-cloud.js file with sudo - *sudo node pi-gpio-to-cloud.js*. If successful, you will start seeing '-------' every one second, and as soon as you touch the touch sensor, a beep sound should come and the value should be sent to Azure.
+16.  Run the pi-gpio-to-cloud.js file with sudo - *sudo node pi-gpio-to-cloud.js*. If successful, you will start seeing '-------' every one second, and as soon as you touch the touch sensor, the buzzer should ring and the value should be sent to Azure.
 
 17.  The data is now being sent to Azure. You can verify that the data is being sent to Azure by using the same Device Explorer tool above. Go to the Data tab, choose the device, and click on Monitor. Now touch the touch sensor again - the data format being sent is of the form *{"VoteCount":1,"TimeFlag":"2016-11-09T20:22:53.845Z"}*
 
@@ -87,12 +87,12 @@ To get this to work, follow the steps below:
 
 ##### Create Stream Analytics jobs
 1. Go to portal.azure.com
-2. Click + sign, search for Stream Analytics job, click on Create. Give it a name "iotnext-sa", select Same region and the same resource group as that of your IOT Hub.
-3. Click on iotnext-sa, click on "Inputs" and add a new input. Give an input alias name like "input1", select option "Data Stream" , Source as "IoT Hub", use IoT Hub from the current subscription, and choose the same IoT Hub you had created earlier. Endpoint: Messaging. Shared access policy name: iothubowner. Event serialization format: JSON.
+2. Click + sign, search for Stream Analytics job, click on Create. Give it a name "iotplay-sa", select the same region and the same resource group as that of your IOT Hub.
+3. Click on iotplay-sa, click on "Inputs" and add a new input. Give an input alias name like "input1", select option "Data Stream" , Source as "IoT Hub", use IoT Hub from the current subscription, and choose the same IoT Hub you had created earlier. Endpoint: Messaging. Shared access policy name: iothubowner. Event serialization format: JSON.
 
 4. Click on "Outputs" and add a new output. Give an output alias name "outputpbi", Sink: Power BI , Authorize Power BI if you have an account, else signup and authorize yourself. 
-        Table name - iotnext-table
-        Dataset name - iotnext-dataset
+        Table name - iotplay-table
+        Dataset name - iotplay-dataset
 5. Click on "Query". Copy Paste this query in the box given
 
        `
@@ -104,7 +104,7 @@ To get this to work, follow the steps below:
 #### Creating PowerBI report
 
 1. Go to [PowerBI.com] (http://www.powerbi.com)
-2. A dataset by the name iotnext-dataset should appear on the left bottom, under the 'Datasets'- click on it.
+2. A dataset by the name iotplay-dataset should appear on the left bottom, under the 'Datasets'- click on it.
 3. From right side toolbox, select votecount and select the Gauge chart in Visualizations.
 4. Click on Pin visual, give a name to your Report.
 5. Then select the name of Dashboard you want it to be pinned to, or Create a new Dashboard, and it'll get pinned to the same.
