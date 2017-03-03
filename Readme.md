@@ -25,7 +25,7 @@ To get this to work, follow the steps below:
 
 2.  Connect the HDMI cable from the Raspberry Pi to the Monitor. Also, connect the wired keyboard and wired mouse to the USB slots in the Raspberry Pi.
 
-3.  Power up the Pi, by connecting it to a power socket. Wait for a minute once this is done. If you are using a **Raspberry Pi 2**, connect the WiFi module to the USB port of the Pi and follow the instructions [here](https://www.hackster.io/achindra/setting-wireless-on-raspberry-pi-f3e78d) to configure WiFi for the Pi. If you are using a **Raspberry Pi 3**, there is no need to connect a separate WiFi module, just follow the steps in the above link. 
+3.  Power up the Pi, by connecting it to a power socket. Wait for a minute once this is done. If you are using a **Raspberry Pi 2**, connect the WiFi module to the USB port of the Pi. You will see the Internet icon in the taskbar (usually at the top right of the screen) - select the appropriate SSID and connect to it. (Alternative way : Click on the link and follow the instructions [here](https://www.hackster.io/achindra/setting-wireless-on-raspberry-pi-f3e78d) to configure WiFi for the Pi). If you are using a **Raspberry Pi 3**, there is no need to connect a separate WiFi module. 
 
 4.  Put the Raspberry Pi and your development machine on the same network. Get the IP address of the Pi (by viewing the IP on a display connected to the Pi - go to Terminal and type ifconfig).
 
