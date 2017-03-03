@@ -16,7 +16,7 @@ To get this to work, follow the steps below:
     -   VCC of touch sensor to 5V PWR (Pin 2) of Raspberry Pi
     -   SIG of touch sensor to GPIO 2 (Pin 3) of Raspberry Pi
 
-*Note: GND, VCC and SIG are specified near the touch sensor pins.
+**Note**: GND, VCC and SIG are specified near the touch sensor pins.
 
     Follow this setup for connections with the Buzzer:
 
